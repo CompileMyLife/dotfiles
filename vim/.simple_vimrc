@@ -1,0 +1,13 @@
+syntax on
+set nu
+set encoding=utf-8
+set textwidth=79
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set backspace=indent,eol,start
+set laststatus=2
+set hlsearch
+set incsearch
+set showmatch

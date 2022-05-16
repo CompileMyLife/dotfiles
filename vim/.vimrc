@@ -7,6 +7,9 @@ syntax on
 " Enable line numbering
 set nu
 
+" Show the line and column number
+set ruler
+
 " Enable mouse
 set mouse=a
 
@@ -76,7 +79,7 @@ set wildmenu
 " Tweaks for browsing
 let g:netrw_banner=0       "disable annoying banner
 let g:netrw_browse_split=4 "open in prior window
-let g:netrw_altv=1         "open splits to the right
+let g:netrw_altv=2         "open splits to the right
 let g:netrw_lifestyle=3    "tree view
 let g:netrw_list_hide=netrw_gitignore#Hide()
 

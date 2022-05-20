@@ -87,3 +87,17 @@ let g:netrw_list_hide=netrw_gitignore#Hide()
 " - :edit a folder to open a file browser
 " - <CR>/v/t to open in an h-split/v-split/tab
 " - check |netrw-browse-maps| for more mappings
+
+" TAG JUMPING:
+
+" Create the 'tags' file (may need to install ctags first)
+command! MakeTags !ctags -R .
+
+" USE:
+" - Use ^] to jump to tag under cursor
+" - Use g^] for ambiguous tags
+" - Use ^t to jump back up the tag stack
+" - Use ^o to jump back to initial file you started from
+
+" NOTE:
+" - This doesn't help if you want a visual list of tags

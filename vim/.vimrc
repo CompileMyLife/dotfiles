@@ -13,10 +13,6 @@ set ruler
 " Enable mouse
 set mouse=a
 
-" Highlight current line
-set cursorline
-:highlight Cursorline cterm=bold ctermbg=0
-
 " Set character set as UTF-8
 set encoding=utf-8
 

@@ -1,5 +1,6 @@
 set nocompatible    " Be iMproved
 filetype plugin on
+filetype plugin indent on
 
 " Enable Syntax
 syntax on
@@ -13,9 +14,15 @@ set ruler
 " Enable mouse
 set mouse=a
 
+" Limit the bottom end of the page to be 10 lines away
+set scrolloff=10
+
 " Enable Cursor line
 set cursorline
-:highlight Cursorline cterm=NONE ctermbg=0
+
+" Enable Color Column
+set colorcolumn=79
+
 " Set character set as UTF-8
 set encoding=utf-8
 
@@ -48,6 +55,9 @@ set incsearch
 " Shows the matching part of pairs [], {}, and ()
 set showmatch
 
+" Let the <Leader> key to be 'spacebar'
+let mapleader=" "
+
 " FINDING FILES:
 
 " Search down into subfolders
@@ -66,12 +76,25 @@ set wildmenu
 
 " The documentation is in |ins-completion|
 
+set completeopt=menuone,longest,popup
+
+" While in insert mode, hit tab tab instead of ctrl x-ctrl o for omni
+inoremap <Tab><Tab> <c-x><c-o>
+
+" For the mapping commands make it 300 ms to timeout for normal use
+set timeout timeoutlen=300
+
+" Autocmds for autocompletion with <c-x><c-o> 
+autocmd FileType html setl omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css setl omnifunc=csscomplete#CompleteCSS
+autocmd FileType c setl omnifunc=ccomplete#CompleteCpp
+autocmd FileType python setl omnifunc=syntaxcomplete#Complete
 " USE:
-" - ^x^n for JUST this file
-" - ^x^f for filenames (works with path)
-" - ^x^] for tags only
-" - ^n for anything specified by the 'complete' option
-" - Use ^n and ^p to go back and forth in the suggestion lists
+" - CTRL-x-CTRL-n for JUST this file
+" - CTRL-x-CTRL-f for filenames (works with path)
+" - CTRL-x-CTRL-] for tags only
+" - CTRL-n for anything specified by the 'complete' option
+" - Use CTRL-n and CTRL-p to go back and forth in the suggestion lists
 
 " FILE BROWSING:
 
@@ -93,10 +116,22 @@ let g:netrw_list_hide=netrw_gitignore#Hide()
 command! MakeTags !ctags -R .
 
 " USE:
-" - Use ^] to jump to tag under cursor
-" - Use g^] for ambiguous tags
-" - Use ^t to jump back up the tag stack
-" - Use ^o to jump back to initial file you started from
+" - Use CTRL-] to jump to tag under cursor
+" - Use g-CTRL-] for ambiguous tags
+" - Use CTRL-t to jump back up the tag stack
+" - Use CTRL-o to jump back to initial file you started from
 
 " NOTE:
 " - This doesn't help if you want a visual list of tags
+
+" SNIPPETS:
+
+" html-template
+nnoremap <Leader> html:-1read $HOME/.vim/snippets/html-template.html<CR>
+
+set termguicolors
+
+colorscheme desert
+highlight Cursorline cterm=NONE ctermbg=8
+highlight ColorColumn cterm=NONE ctermfg=8
+highlight StatusLine cterm=NONE ctermbg=4

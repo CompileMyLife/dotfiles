@@ -78,12 +78,6 @@ set wildmenu
 
 set completeopt=longest,menuone
 
-" While in insert mode, hit tab tab instead of ctrl x-ctrl o for omni
-inoremap <Tab><Tab> <c-x><c-o>
-
-" For the mapping commands make it 300 ms to timeout for normal use
-set timeout timeoutlen=300
-
 " Autocmds for autocompletion with <c-x><c-o> 
 autocmd FileType html setl omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css setl omnifunc=csscomplete#CompleteCSS
@@ -131,7 +125,7 @@ nnoremap <Leader> html:-1read $HOME/.vim/snippets/html-template.html<CR>
 
 set termguicolors 
 colorscheme desert
-hi
+
 hi Cursorline cterm=NONE ctermbg=0 guibg=black
 hi ColorColumn cterm=NONE ctermfg=0 guibg=black
 hi StatusLine cterm=NONE guibg=tan

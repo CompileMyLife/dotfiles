@@ -1,5 +1,5 @@
 # Welcome to my Configurations and Setup
-sSo far what lies in this repo, is my vim config files in the vim folder
+So far what lies in this repo, is my vim config files in the vim folder
 ## NOTE:
 I have used vim for quite a bit, so there could be many things I use.
 However, if you are just starting out, I have a simple .vimrc that you

@@ -123,9 +123,9 @@ command! MakeTags !ctags -R .
 " html-template
 nnoremap <Leader> html:-1read $HOME/.vim/snippets/html-template.html<CR>
 
-set termguicolors 
+"set termguicolors 
 colorscheme desert
 
-hi Cursorline cterm=NONE ctermbg=0 guibg=black
+hi Cursorline cterm=NONE ctermbg=16 guibg=black
 hi ColorColumn cterm=NONE ctermfg=0 guibg=black
-hi StatusLine cterm=NONE guibg=tan
+hi StatusLine cterm=NONE ctermbg=8 guibg=tan

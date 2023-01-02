@@ -46,7 +46,7 @@ set backspace=indent,eol,start
 set autoindent
 set laststatus=2                " 2 displays status line always
 
-" Enable highlight searching pattern
+" Enable hi searching pattern
 set hlsearch
 
 " Enable show matches while typing to search 
@@ -76,13 +76,7 @@ set wildmenu
 
 " The documentation is in |ins-completion|
 
-set completeopt=menuone,longest,popup
-
-" While in insert mode, hit tab tab instead of ctrl x-ctrl o for omni
-inoremap <Tab><Tab> <c-x><c-o>
-
-" For the mapping commands make it 300 ms to timeout for normal use
-set timeout timeoutlen=300
+set completeopt=longest,menuone
 
 " Autocmds for autocompletion with <c-x><c-o> 
 autocmd FileType html setl omnifunc=htmlcomplete#CompleteTags
@@ -129,9 +123,9 @@ command! MakeTags !ctags -R .
 " html-template
 nnoremap <Leader> html:-1read $HOME/.vim/snippets/html-template.html<CR>
 
-set termguicolors
-
+"set termguicolors 
 colorscheme desert
-highlight Cursorline cterm=NONE ctermbg=8
-highlight ColorColumn cterm=NONE ctermfg=8
-highlight StatusLine cterm=NONE ctermbg=4
+
+hi Cursorline cterm=NONE ctermbg=16 guibg=black
+hi ColorColumn cterm=NONE ctermfg=0 guibg=black
+hi StatusLine cterm=NONE ctermbg=8 guibg=tan

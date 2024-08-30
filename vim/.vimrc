@@ -46,6 +46,7 @@ set backspace=indent,eol,start
 set autoindent
 set laststatus=2                " 2 displays status line always
 
+set listchars=tab:▷▷⋮
 " Enable hi searching pattern
 set hlsearch
 
@@ -76,13 +77,11 @@ set wildmenu
 
 " The documentation is in |ins-completion|
 
-set completeopt=longest,menuone
+set completeopt=preview,longest,menuone
 
 " Autocmds for autocompletion with <c-x><c-o> 
-autocmd FileType html setl omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css setl omnifunc=csscomplete#CompleteCSS
-autocmd FileType c setl omnifunc=ccomplete#CompleteCpp
-autocmd FileType python setl omnifunc=syntaxcomplete#Complete
+set omnifunc=syntaxcomplete#Complete
+
 " USE:
 " - CTRL-x-CTRL-n for JUST this file
 " - CTRL-x-CTRL-f for filenames (works with path)
@@ -123,7 +122,7 @@ command! MakeTags !ctags -R .
 " html-template
 nnoremap <Leader> html:-1read $HOME/.vim/snippets/html-template.html<CR>
 
-"set termguicolors 
+set termguicolors 
 colorscheme desert
 
 hi Cursorline cterm=NONE ctermbg=16 guibg=black

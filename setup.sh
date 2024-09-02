@@ -4,6 +4,8 @@
 # machine
 #
 
+
+cd "$(dirname "$0")"
 ABS_PATH=$(pwd)
 
 # ----- setup.sh Usage -----
@@ -16,7 +18,7 @@ usage() {
 
 # ----- Symlink dotfiles to $HOME -----
 create_symlink() {
-    files=".vimrc .vim .tmux.conf"
+    files=".vimrc .vim .tmux.conf .bash_profile .bashrc"
 
     for i in $files; do 
         # Check IF it exists
@@ -89,6 +91,6 @@ while getopts ":e:h" arg; do
 done
            
 create_symlink
-create_ssh_key $ghub_email
+#create_ssh_key $ghub_email
 
 exit 0

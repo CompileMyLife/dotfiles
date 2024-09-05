@@ -55,6 +55,16 @@ set incsearch
 " Shows the matching part of pairs [], {}, and ()
 set showmatch
 
+" Manually highlight lines via visual mode to fold
+set foldmethod=manual
+" USE:
+" zf  -  create fold
+" zo  -  open fold
+" zc  -  close fold
+" zd  -  delete fold
+" zR  -  open all folds
+" zM  -  close all folds
+
 " Let the <leader> key to be ','
 let mapleader=","
 

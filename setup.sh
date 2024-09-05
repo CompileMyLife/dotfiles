@@ -58,15 +58,15 @@ create_ssh_key() {
 
 # ----- MAINLINE -----
 
-ghub_email="" # empty
+email="" # empty
 
 while getopts ":e:h" arg; do
     case $arg in
-        e) ghub_email=${OPTARG}
-           echo "Email provided: $ghub_email"
+        e) email=${OPTARG}
+           echo "Email provided: $email"
 
            # Check IF email variable empty
-           if [[ -z "$ghub_email" ]]; then
+           if [[ -z "email" ]]; then
                echo "Argument has no value"
                usage
                exit 1
@@ -89,8 +89,12 @@ while getopts ":e:h" arg; do
           ;;
    esac
 done
-           
+
+# Install Vim Plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 create_symlink
-#create_ssh_key $ghub_email
+create_ssh_key $email
 
 exit 0

@@ -94,7 +94,7 @@ done
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-#create_symlink
-#create_ssh_key $email
+create_symlink
+create_ssh_key $email
 
 exit 0

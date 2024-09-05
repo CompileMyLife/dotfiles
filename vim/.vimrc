@@ -140,6 +140,13 @@ command! MakeTags !ctags -R .
 " html-template
 nnoremap <leader> html:-1read $HOME/.vim/snippets/html-template.html<CR>
 
+call plug#begin()
+
+" List your plugins here
+Plug 'tpope/vim-dispatch'
+
+call plug#end()
+
 set termguicolors 
 colorscheme desert
 

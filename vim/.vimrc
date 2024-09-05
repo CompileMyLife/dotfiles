@@ -46,7 +46,6 @@ set backspace=indent,eol,start
 set autoindent
 set laststatus=2                " 2 displays status line always
 
-set listchars=tab:▷▷⋮
 " Enable hi searching pattern
 set hlsearch
 
@@ -56,8 +55,14 @@ set incsearch
 " Shows the matching part of pairs [], {}, and ()
 set showmatch
 
-" Let the <Leader> key to be 'spacebar'
-let mapleader=" "
+" Let the <leader> key to be ','
+let mapleader=","
+
+" Show tab and trail space characters
+set listchars=tab:▶\ ,trail:⌊
+
+" Toggle the listchars
+nnoremap <leader>l :set list!<CR>
 
 " FINDING FILES:
 
@@ -77,7 +82,7 @@ set wildmenu
 
 " The documentation is in |ins-completion|
 
-set completeopt=preview,longest,menuone
+set completeopt+=preview,menuone
 
 " Autocmds for autocompletion with <c-x><c-o> 
 set omnifunc=syntaxcomplete#Complete
@@ -105,6 +110,9 @@ let g:netrw_list_hide=netrw_gitignore#Hide()
 
 " TAG JUMPING:
 
+" Disable cscope style tags
+set nocscopetag
+
 " Create the 'tags' file (may need to install ctags first)
 command! MakeTags !ctags -R .
 
@@ -120,7 +128,7 @@ command! MakeTags !ctags -R .
 " SNIPPETS:
 
 " html-template
-nnoremap <Leader> html:-1read $HOME/.vim/snippets/html-template.html<CR>
+nnoremap <leader> html:-1read $HOME/.vim/snippets/html-template.html<CR>
 
 set termguicolors 
 colorscheme desert
